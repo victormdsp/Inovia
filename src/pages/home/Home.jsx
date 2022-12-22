@@ -19,7 +19,7 @@ export default function Home() {
                 headers: { 'Content-Type': 'application/json' }
             }
 
-            const data = await fetch('http://localhost:3001/pedidos/getAllPedidos', requestOptions)
+            const data = await fetch('http://localhost:3002/pedidos/getAllPedidos', requestOptions)
             const pedidos = await data.json();
 
             for (const pedido of pedidos) {
@@ -28,7 +28,7 @@ export default function Home() {
                     headers: { 'Content-Type': 'application/json' }
                 };
 
-                const response = await fetch(`http://localhost:3001/clientes/getOneClient/${pedido.clienteid}`, requestOption)
+                const response = await fetch(`http://localhost:3002/clientes/getOneClient/${pedido.clienteid}`, requestOption)
                 const cliente = await response.json();
                 const pedidoClient = Object.assign(cliente, pedido);
                 if (!pedidoClient.message) setPedidos(pedidos => [...pedidos, pedidoClient])

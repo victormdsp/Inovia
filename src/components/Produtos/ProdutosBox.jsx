@@ -19,7 +19,7 @@ export default function ProdutosBox(props) {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        fetch('http://localhost:3001/getAllProducts', requestOptions)
+        fetch('http://localhost:3002/getAllProducts', requestOptions)
             .then(async (response) => {
                 const data = await response.json()
                 setProducts(data)
@@ -101,7 +101,7 @@ export default function ProdutosBox(props) {
             })
         }
 
-        fetch('http://localhost:3001/pedidos/createPedido', requestOption)
+        fetch('http://localhost:3002/pedidos/createPedido', requestOption)
             .then(async (response) => {
                 const data = await response.json();
                 if (data) {
@@ -148,7 +148,7 @@ export default function ProdutosBox(props) {
             })
         }
 
-        fetch(`http://localhost:3001/pedidos/updatePedido/${props.pedidoEditar.id}`, requestOption)
+        fetch(`http://localhost:3002/pedidos/updatePedido/${props.pedidoEditar.id}`, requestOption)
             .then(async (response) => {
                 const data = await response.json();
                 if (data) {

@@ -23,7 +23,7 @@ export default function Account() {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        fetch(`http://localhost:3001/pedidos/getMeusPedidos/${userInfos.id}`, requestOptions)
+        fetch(`http://localhost:3002/pedidos/getMeusPedidos/${userInfos.id}`, requestOptions)
             .then(async (response) => {
                 const data = await response.json()
                 if (data.message) setPedidos(false);
@@ -107,7 +107,7 @@ function CancelarModal(props) {
             headers: { 'Content-Type': 'application/json' }
         }
 
-        fetch(`http://localhost:3001/pedidos/deletePedido/${props.pedido.id}`, requestOptions)
+        fetch(`http://localhost:3002/pedidos/deletePedido/${props.pedido.id}`, requestOptions)
             .then(() => {
                 openCancelarModal(false);
                 props.remove(props.pedidoIndex)
