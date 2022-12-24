@@ -1,4 +1,4 @@
-import Rotas from './routes';
+import Rotas from './routes.js';
 
 function App() {
   return (
