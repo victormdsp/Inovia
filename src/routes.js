@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home"
-import Account from "./pages/account/Account"
+import Home from "./pages/home/Home.jsx"
+import Account from "./pages/account/Account.jsx"
 
 const Rotas = () => {
     return (
