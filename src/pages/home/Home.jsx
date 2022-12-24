@@ -19,7 +19,7 @@ export default function Home() {
                 headers: { 'Content-Type': 'application/json' }
             }
 
-            const data = await fetch('http://localhost:3002/pedidos/getAllPedidos', requestOptions)
+            const data = await fetch('http://localhost:3001/pedidos/getAllPedidos', requestOptions)
             const pedidos = await data.json();
 
             for (const pedido of pedidos) {
@@ -28,7 +28,7 @@ export default function Home() {
                     headers: { 'Content-Type': 'application/json' }
                 };
 
-                const response = await fetch(`http://localhost:3002/clientes/getOneClient/${pedido.clienteid}`, requestOption)
+                const response = await fetch(`http://localhost:3001/clientes/getOneClient/${pedido.clienteid}`, requestOption)
                 const cliente = await response.json();
                 const pedidoClient = Object.assign(cliente, pedido);
                 if (!pedidoClient.message) setPedidos(pedidos => [...pedidos, pedidoClient])
@@ -53,7 +53,10 @@ export default function Home() {
     return (
         <div className="homeBody">
             <Header></Header>
-            <Stack direction='column' spacing={2} alignItems="center" justifyContent="center" className="stackPedidos">{pedidos ? pedidos.map((value, index) => mountPedidos(value, index)) : "Não foi encontrado nenhum pedido."}</Stack>
+            <div className="corpo">
+                <h1 className="white">Meus pedidos:</h1>
+                {pedidos.length > 0 ? <Stack direction='column' spacing={2} alignItems="center" justifyContent="center" className="stackPedidos"> {pedidos.map((value, index) => mountPedidos(value, index))} </Stack> : <h1>Não foi encontrado nenhum pedido.</h1>}
+            </div>
             <Footer></Footer>
         </div>
     )

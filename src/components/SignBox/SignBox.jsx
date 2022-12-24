@@ -36,7 +36,7 @@ export default function SignBox() {
                 headers: { 'Content-Type': 'application/json', 'Authorization':  `Bearer ${localStorage.getItem('user')}`}
             }
     
-            fetch(`http://localhost:3002/clientes/loginAuto/${localStorage.getItem('userID')}`, requestOption)
+            fetch(`http://localhost:3001/clientes/loginAuto/${localStorage.getItem('userID')}`, requestOption)
                 .then(async (response) => {
                     const data = await response.json();
                     if (data.status == "invalid") setLoginIncorreto(true);
@@ -70,7 +70,7 @@ export default function SignBox() {
             })
         }
 
-        fetch('http://localhost:3002/clientes/createClient', requestOption)
+        fetch('http://localhost:3001/clientes/createClient', requestOption)
             .then(async (response) => {
                 const data = await response.json();
                 if (data.status == "invalid") setRegisterIncorreto(true);
@@ -97,7 +97,7 @@ export default function SignBox() {
             })
         }
 
-        fetch('http://localhost:3002/clientes/login', requestOption)
+        fetch('http://localhost:3001/clientes/login', requestOption)
             .then(async (response) => {
                 const data = await response.json();
                 if (data.status == "invalid") setLoginIncorreto(true);
@@ -121,7 +121,7 @@ export default function SignBox() {
                     <Box sx={BoxStyle}>
                         <Button onClick={() => setOpenRegister(false)} variant="contained" color="info" className='closeButton'>X</Button>
                         <div className='mainDiv'>
-                            <h1 className='formText'>Bem-vindo/a, faça login para acessar sua conta!</h1>
+                            <h1 className='formText'>Bem-vindo/a, faça seu registro para criar uma conta!</h1>
                             <form onSubmit={event => handleRegister(event)} className='mainForm'>
                                 <label htmlFor="">Nome</label>
                                 <input required type="text" onChange={event => setRegisterInfos({ ...registerInfos, nome: event.target.value })} />

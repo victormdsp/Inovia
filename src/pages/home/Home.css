@@ -12,11 +12,23 @@
 
 .stackPedidos {
     margin: 2em;
-    height: 65.5vh;
 }
 
 .flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.corpo {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.white{
+    color: white;
 }
