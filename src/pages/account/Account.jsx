@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Card, ListItemText, Modal } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import ProdutosBox from "../../components/Produtos/ProdutosBox";
+import ProdutosBox from "../../components/Produtos/ProdutosBox.jsx";
 import './Account.css';
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 import { Stack } from "@mui/system";
 import BoxStyle from '../../styles/BoxModal'
-import VerPedido from "../../components/VerModal/VerModal";
+import VerPedido from "../../components/VerModal/VerModal.jsx";
 
 export default function Account() {
     const location = useLocation();

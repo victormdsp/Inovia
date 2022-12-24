@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer"
+import Header from "../../components/Header/Header.jsx";
+import Footer from "../../components/Footer/Footer.jsx"
 import './Home.css'
 import { Stack } from "@mui/system";
-import { Box, Button, Card, ListItemText, Modal } from "@mui/material";
+import { Card, ListItemText } from "@mui/material";
 
-import BoxStyle from '../../styles/BoxModal'
-import VerPedido from "../../components/VerModal/VerModal";
+import VerPedido from "../../components/VerModal/VerModal.jsx";
 // import PedidoBox from "../../components/Pedido/PedidoBox";
 
 export default function Home() {

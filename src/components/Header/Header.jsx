@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import SignBox from '../SignBox/SignBox';
+import SignBox from '../SignBox/SignBox.jsx';
 
 import logo from '../../Assets/logo.png'
 import './Header.css'
